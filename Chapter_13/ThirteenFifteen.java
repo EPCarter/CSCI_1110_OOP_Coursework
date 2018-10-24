@@ -4,14 +4,12 @@
  * @course CSCI 1110 - Object Oriented Programming
  * @assignment 13-15
  * @date Oct. 24, 2018
- * @summary
+ * @summary (Use BigInteger for the Rational class) Redesign and implement the
+ *          Rational class in Listing 13.13 using BigInteger for the numerator
+ *          and denominator.
  **/
 class ThirteenFifteen {
 	public static void main(String[] args) {
 
 	}
 }
-
-
-
-

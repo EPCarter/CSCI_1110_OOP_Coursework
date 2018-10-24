@@ -4,15 +4,12 @@
  * @course CSCI 1110 - Object Oriented Programming
  * @assignment 14-1
  * @date Oct. 24, 2018
- * @summary
+ * @summary (Display images) Write a program that displays four images in a grid
+ *          pane, as shown below. You do not need to use the same images as
+ *          below.
  **/
 class FourteenOne {
 	public static void main(String[] args) {
 
 	}
 }
-
-
-
-
-
