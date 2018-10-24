@@ -1,2 +1,2 @@
 # CSCI_1110_OOP_Coursework
-Object Oriented Corsework
+Object Oriented Coursework
