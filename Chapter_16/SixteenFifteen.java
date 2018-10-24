@@ -4,7 +4,9 @@
  * @course CSCI 1110 - Object Oriented Programming
  * @assignment 16-15
  * @date Oct. 24, 2018
- * @summary
+ * @summary (Demonstrate Label properties) Write a program to let the user
+ *          dynamically set the properties contentDisplay and graphicTextGap, as
+ *          shown in Figure 16.42b.
  **/
 class SixteenFifteen {
 	public static void main(String[] args) {

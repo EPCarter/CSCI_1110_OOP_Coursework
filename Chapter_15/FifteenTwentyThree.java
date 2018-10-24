@@ -4,7 +4,9 @@
  * @course CSCI 1110 - Object Oriented Programming
  * @assignment 15-23
  * @date Oct. 24, 2018
- * @summary
+ * @summary (Auto resize stop sign) Rewrite Programming Exercise 14.15 so that
+ *          the stop sign’s width and height are automatically resized when the
+ *          window is resized.
  **/
 class FifteenTwentyThree {
 	public static void main(String[] args) {
