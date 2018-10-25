@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
  * @author: Erik Carter
  * @email Carter.Eri7200@stu.stech.edu
@@ -22,6 +24,88 @@
  **/
 class NineOne {
 	public static void main(String[] args) {
+		System.out.println("Input Width: ");
+		double widthInput = getInput();
+		System.out.println("Input Height: ");
+		double heightInput = getInput();
+		// add to rectangle
+	}
 
+	/**
+	 * This method calculates the area of the rectangle
+	 * 
+	 * @return Area is returned as a double
+	 */
+	public static double getArea() {
+		double area = 0;
+		double width = 1;
+		double height = 1;
+		area = width * height;
+		return area;
+	}
+
+	/**
+	 * This method calculates the perimeter
+	 * 
+	 * @return Perimeter is returned as a double
+	 */
+	public static double getPerimeter() {
+		double perimeter = 0;
+		double width = 1;
+		double height = 1;
+		perimeter = (width * 2) + (height * 2);
+		return perimeter;
+	}
+
+	/**
+	 * This class is the rectangle. It holds width and height data
+	 *
+	 */
+	public class rectangle {
+		double width = 1;
+		double height = 1;
+		double area = 0;
+		double perimeter = 0;
+	}
+
+	/**
+	 * This method gets input from the user
+	 * 
+	 * @return Input is returned as a double
+	 */
+	public static double getInput() {
+		Scanner reader = new Scanner(System.in);
+		double input = reader.nextDouble();
+		reader.close();
+		return input;
+	}
+
+	/**
+	 * This is the no argument constructor
+	 */
+	public static void noArgConstructor() {
+
+	}
+
+	/**
+	 * This is the ULM diagram
+	 */
+	public static void ulm() {
+
+	}
+
+	/**
+	 * This method prints out the information about the rectangle
+	 */
+	public static void printer() {
+		double width = 0; // from rectangle
+		double height = 0;
+		double area = getArea();
+		double perimeter = getPerimeter();
+
+		System.out.println("Width: " + width);
+		System.out.println("Height: " + height);
+		System.out.println("Area: " + area);
+		System.out.println("Perimeter: " + perimeter);
 	}
 }
