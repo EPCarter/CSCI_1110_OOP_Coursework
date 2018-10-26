@@ -68,9 +68,9 @@ public class ElevenThirteen {
 		return data;
 	}
 
-	public static String cleaner(String toClean) { // removes most punctuation
-		String cleanedString = toClean.replaceAll("\\,|\\*|\\(|\\)|\\[|\\]|\\:|\\'|\\^|\\?|\"", " "); // add \\.
-		cleanedString = cleanedString.replaceAll("\\s{2,}", " "); // removes extra spaces
+	public static String cleaner(String toClean) {
+		String cleanedString = toClean.replaceAll("\\,|\\*|\\(|\\)|\\[|\\]|\\:|\\'|\\^|\\?|\"", " ");
+		cleanedString = cleanedString.replaceAll("\\s{2,}", " ");
 		cleanedString = cleanedString.replaceAll("\\s{2,}", " ");
 		cleanedString = cleanedString.replaceAll("^\\s", "");
 		cleanedString = cleanedString.replaceAll("\\s$", "");
