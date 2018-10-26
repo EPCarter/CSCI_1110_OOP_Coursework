@@ -1,3 +1,4 @@
+
 /**
  * @author: Erik Carter
  * @email Carter.Eri7200@stu.stech.edu
@@ -15,8 +16,77 @@
  * 
  *          The distinct integers are: 34 5 3 6 4 33 2
  **/
-class ElevenThirteen {
-	public static void main(String[] args) {
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
+@SuppressWarnings("resource")
+
+public class ElevenThirteen {
+	public static void main(String[] args) {
+		System.out.println("Enter ten integers: ");
+		ArrayList<Integer> data = new ArrayList<>();
+		data = removeDuplicate(importer(getInput(), data));
+		System.out.println(cleaner(data.toString()));
+	}
+
+	public static String testMethod(String input) {
+		ArrayList<Integer> data2 = new ArrayList<>();
+		data2 = removeDuplicate(importer(input, data2));
+		input = cleaner(data2.toString());
+		return input;
+	}
+
+	public static String getInput() {
+		Scanner reader = new Scanner(System.in);
+		String input = "";
+		input = cleaner(reader.nextLine());
+		return input;
+	}
+
+	public static void more(ArrayList<Integer> data) {
+		int j = data.size();
+		if (j < 10) {
+			System.out.println();
+			System.out.println("Enter " + (10 - data.size()) + " more numbers.");
+			importer(getInput(), data);
+		}
+	}
+
+	public static ArrayList<Integer> importer(String input, ArrayList<Integer> data) {
+		String[] stringValues = input.split("\\s|\\,");
+		for (int i = 0; i < stringValues.length; i++) {
+			String value = stringValues[i];
+			try {
+				int inputInt = Integer.parseInt(value);
+				data.add(inputInt);
+			} catch (NumberFormatException e) {
+				System.out.println("Try again.");
+			}
+		}
+		more(data);
+		return data;
+	}
+
+	public static String cleaner(String toClean) { // removes most punctuation
+		String cleanedString = toClean.replaceAll("\\,|\\*|\\(|\\)|\\[|\\]|\\:|\\'|\\^|\\?|\"", " "); // add \\.
+		cleanedString = cleanedString.replaceAll("\\s{2,}", " "); // removes extra spaces
+		cleanedString = cleanedString.replaceAll("\\s{2,}", " ");
+		cleanedString = cleanedString.replaceAll("^\\s", "");
+		cleanedString = cleanedString.replaceAll("\\s$", "");
+		return cleanedString;
+	}
+
+	public static ArrayList<Integer> removeDuplicate(ArrayList<Integer> data) {
+
+		for (int k = 0; k < data.size(); k++) {
+			for (int m = 0; m < data.size(); m++) {
+				if (data.get(m) == data.get(k) && k != m) {
+					data.remove(m);
+				}
+			}
+		}
+		data.sort(null);
+		return data;
 	}
 }
