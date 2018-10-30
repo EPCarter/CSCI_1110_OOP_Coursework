@@ -21,4 +21,8 @@ class ThirteenSeven {
 	public static void main(String[] args) {
 
 	}
+	
+	public static void howToColor() {
+		System.out.println("Color all four sides.");
+	}
 }

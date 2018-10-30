@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
  * @author: Erik Carter
  * @email Carter.Eri7200@stu.stech.edu
@@ -11,5 +13,11 @@
 class SixteenFifteen {
 	public static void main(String[] args) {
 
+	}
+	public static String getInput() {
+		Scanner reader = new Scanner(System.in);
+		String input = reader.nextLine();
+		reader.close();
+		return input;
 	}
 }
