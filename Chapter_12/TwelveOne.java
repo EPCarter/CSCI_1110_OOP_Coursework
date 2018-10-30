@@ -1,3 +1,7 @@
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * @author: Erik Carter
  * @email Carter.Eri7200@stu.stech.edu
@@ -14,6 +18,111 @@
  **/
 class TwelveOne {
 	public static void main(String[] args) {
+		System.out.println("*Nice Parser*");
+		System.out.println("Enter math:");
+		inputHandler(getInput());
+		dumbMath();
+	}
 
+	public static String getInput() {
+		Scanner reader = new Scanner(System.in);
+		String input = "";
+		input = reader.nextLine();
+		return input;
+	}
+
+	public static String inputHandler(String input) {
+		String numReg = "\\d{1,}";
+		String symbolReg = "\\*|\\+|\\-|\\/";
+		String cleanedString = "";
+		String lastNumReg = "\\d{1,}$";
+		double firstNum = 0;
+		double secondNum = 0;
+		String symbol = "";
+		String charReg = "[a-zA-Z]";
+
+		cleanedString = input.replaceAll("\\s{2,}", " ");
+		cleanedString = input.replaceAll("\\s{2,}", " ");
+
+		Pattern searchPattern = Pattern.compile(charReg);
+		Matcher searchMatcher = searchPattern.matcher(cleanedString);
+
+		if (searchMatcher.find()) {
+			System.out.println("Enter numbers only");
+			System.exit(0);
+			// cleanedString = cleanedString.replaceAll("[a-zA-Z]", "0");
+		}
+
+		searchPattern = Pattern.compile(numReg);
+		searchMatcher = searchPattern.matcher(cleanedString);
+
+		if (searchMatcher.find()) {
+			firstNum = Double.parseDouble(searchMatcher.group());
+		}
+		searchPattern = Pattern.compile(symbolReg);
+		searchMatcher = searchPattern.matcher(cleanedString);
+
+		if (searchMatcher.find()) {
+			symbol = searchMatcher.group();
+		}
+		searchPattern = Pattern.compile(lastNumReg);
+		searchMatcher = searchPattern.matcher(cleanedString);
+
+		if (searchMatcher.find()) {
+			secondNum = Double.parseDouble(searchMatcher.group());
+		}
+		cleanedString = firstNum + " " + symbol + " " + secondNum + " = ";
+		System.out.print(cleanedString);
+		System.out.println(calculator(firstNum, symbol, secondNum));
+		return cleanedString;
+	}
+
+	public static void dumbMath() {
+		double firstNum = 0;
+		double secondNum = 0;
+		System.out.println();
+		System.out.println("*Not Great Parser*");
+		System.out.println("Enter 1st number: ");
+		try {
+			firstNum = Double.parseDouble(getInput());
+		} catch (NumberFormatException e) {
+			System.out.println("Error: Enter a number");
+			System.exit(0);
+		}
+		System.out.println("Enter math operation: ");
+		String symbol = getInput();
+
+		System.out.println("Enter 2nd number: ");
+		try {
+			secondNum = Double.parseDouble(getInput());
+		} catch (NumberFormatException e) {
+			System.out.println("Error: Enter a number");
+			System.exit(0);
+		}
+		System.out.println(firstNum + " " + symbol + " " + secondNum + " = " + calculator(firstNum, symbol, secondNum));
+	}
+
+	public static double calculator(double firstNum, String symbol, double secondNum) {
+		double answer = 0;
+
+		switch (symbol) {
+		case "+":
+			answer = firstNum + secondNum;
+			break;
+		case "-":
+			answer = firstNum - secondNum;
+			break;
+		case "*":
+			answer = firstNum * secondNum;
+			break;
+		case "/":
+			answer = firstNum / secondNum;
+			break;
+		default:
+			System.out.println("Error: Enter a math operation");
+			System.exit(0);
+			break;
+		}
+		return answer;
 	}
 }

@@ -1,3 +1,6 @@
+import java.util.Random;
+import java.util.Scanner;
+
 /**
  * @author: Erik Carter
  * @email Carter.Eri7200@stu.stech.edu
@@ -15,6 +18,38 @@
  **/
 class TwelveThree {
 	public static void main(String[] args) {
+		System.out.println("Enter index: ");
+		String input = getInput();
+		int[] array = arrayMaker();
+		int inputInt = Integer.parseInt(input);
+		if (inputInt <= array.length && inputInt >= 0) {
+			System.out.println("Index " + inputInt + " holds the value " + array[inputInt]);
+		} else {
+			System.out.println("Out of bounds");
+		}
 
+	}
+
+	public static String getInput() {
+		Scanner reader = new Scanner(System.in);
+		String input = "";
+		input = reader.nextLine();
+		return input;
+	}
+
+	public static int[] arrayMaker() {
+		int[] array = new int[101];
+		for (int i = 0; i < array.length; i++) {
+			array[i] = numberGenerator();
+			System.out.print(array[i] + ",");
+		}
+		System.out.println();
+		return array;
+	}
+
+	public static int numberGenerator() {
+		Random rand = new Random();
+		int number = rand.nextInt(100);
+		return number;
 	}
 }
