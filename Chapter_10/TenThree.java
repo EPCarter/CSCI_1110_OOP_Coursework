@@ -42,5 +42,51 @@
 class TenThree {
 	public static void main(String[] args) {
 
+	MyInteger(){}
+
+	MyInteger(int valueGiven){
+	int value = valueGiven;
 	}
+
+	public int getValue() {
+		return this.value;
+	}
+
+	public static boolean isEven(int value) {
+		boolean isEven = false;
+		return isEven;
+	}
+
+	public static boolean isOdd(int value) {
+		boolean isOdd = false;
+		return isOdd;
+	}
+
+	public static boolean isPrime(int value) {
+		boolean isPrime = false;
+		return isPrime;
+	}
+
+	public boolean equals(int value) {
+		boolean equals = false;
+		return equals;
+	}
+
+	public boolean equals(MyInteger integer) {
+		boolean equals = false;
+		return equals;
+	}
+
+	static int parseInt(char[] charArray) {
+		String charString = charArray.toString();
+		int parsedInt = Integer.parseInt(charString);
+	}
+
+	static int parseInt(String someString) {
+		int parsedInt = Integer.parseInt(someString);
+		return parsedInt;
+	}
+
+	// Test Class
+	// UML
 }

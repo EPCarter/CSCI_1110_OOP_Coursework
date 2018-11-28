@@ -92,7 +92,7 @@ class FinalProject {
  *  What amount of difference does each make
  *  Relationships between criteria
  *  Use knowns, infer ables, do withouts
- *  Write snapshot data to file
+ *  Write snapshot data to filea
  *  
  * 
  * 

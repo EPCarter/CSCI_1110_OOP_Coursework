@@ -55,100 +55,82 @@ class NineNine {
 
 	}
 
-	public void RegularPolygon(int n, double s, double x, double y) {
-		n = 3;
-		s = 1;
-		x = 0;
-		y = 0;
+	public class TestRegularPolygon{
+		RegularPolygon polygon1 = new RegularPolygon(6,4);
+		polygon1.printer();
+		
+		RegularPolygon polygon2 = new RegularPolygon(10,4,5.6,7.8);
+		polygon2.printer();
 	}
 
-	public static void noArgConstructor() {
+	public class RegularPolygon {
+		private int n = 3;
+		private double s = 1;
+		private double x = 0;
+		private double y = 0;
 
-	}
+		RegularPolygon() {
+		}
 
-	public static void argConstructor() {
-		System.out.println("Sides: ");
-		int n = (int) getInput();
-		System.out.println("Length: ");
-		double length = getInput();
-	}
+		RegularPolygon(int newN, double newS, double newX, double newY) {
+			n = newN;
+			s = newS;
+			x = newX;
+			y = newY;
+		}
 
-	public static void argConstructor2() {
-		System.out.println("Sides: ");
-		int sides = (int) getInput();
-		System.out.println("Length: ");
-		double length = getInput();
-		System.out.println("X: ");
-		double x = getInput();
-		System.out.println("Y: ");
-		double y = getInput();
-	}
+		public double getPerimeter(int n, double s) {
+			double perimeter = n * s;
+			return perimeter;
+		}
 
-	public static double getInput() {
-		Scanner reader = new Scanner(System.in);
-		double input = reader.nextDouble();
-		reader.close();
-		return input;
-	}
+		public double getArea(int n, double s) {
+			double area = (n * (s * s)) / (4 * Math.tan(Math.PI / n));
+			return area;
+		}
 
-	public static double getPerimeter(int n, double s) {
-		double perimeter = 0;
-		return perimeter;
-	}
+		public void printer() {
+			System.out.println("Perimeter: " + this.getPerimeter(this.n, this.s));
+			System.out.println("Area: " + this.getArea(this.n, this.s));
+		}
 
-	public static double getArea(int n, double s) {
-		double area = 0;
-		area = (n * (s * s)) / (4 * Math.tan(Math.PI / n));
-		return area;
-	}
+		public void setN() {
+			this.n = Integer.parseInt(getInput());
+		}
 
-	public static void printer() {
-		double perimeter = 0;
-		double area = 0;
-		System.out.println("Perimeter: " + perimeter);
-		System.out.println("Area: " + area);
-	}
+		public int getN() {
+			return this.n;
+		}
 
-	public static void setN() {
+		public void setS() {
+			this.s = Double.parseDouble(getInput());
+		}
 
-	}
+		public double getS() {
+			return this.s;
+		}
 
-	public static void getN() {
+		public void setX() {
+			this.x = Double.parseDouble(getInput());
+		}
 
-	}
+		public double getX() {
+			return this.x;
+		}
 
-	public static void setS() {
+		public void setY() {
+			this.y = Double.parseDouble(getInput());
+		}
 
-	}
+		public double getY() {
+			return this.y;
+		}
 
-	public static void getS() {
-
-	}
-
-	public static void setX() {
-
-	}
-
-	public static void getX() {
-
-	}
-
-	public static void setY() {
-
-	}
-
-	public static void getY() {
-
-	}
-
-	public static void uml() {
-
+		public String getInput() {
+			Scanner reader = new Scanner(System.in);
+			String input = reader.nextLine();
+			reader.close();
+			return input;
+		}
 	}
 }
-
-/*
- * The accessor and mutator methods for all data fields.
- * 
- * 
- * /
- */

@@ -18,10 +18,15 @@ class NineOneTest {
 
 	@Test
 	void test() {
-		double width = 4;
-		double height = 40;
-		double width2 = 3.5;
-		double height2 = 35.9;
-		// assertTrue(NineOne.);
+		Rectangle rectangle1 = new NineOne.Rectangle();
+		printer(rectangle1);
+
+		Rectangle rectangle2 = new NineOne(4, 40) {
+		};
+		printer(rectangle2);
+
+		Rectangle rectangle3 = new NioneOne.Rectangle(3.5, 35.9) {
+		};
+		printer(rectangle3);
 	}
 }

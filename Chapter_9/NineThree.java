@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.Date;
 
 /**
  * @author: Erik Carter
@@ -15,34 +13,23 @@ import java.util.List;
  **/
 class NineThree {
 	public static void main(String[] args) {
-		for (int i = 0; i < 8; i++) {
-			System.out.println("Elapsed Time: " + inputter(i).toString());
-		}
-	}
+		Date date1 = new Date();
+		date1.setTime(10000);
+		System.out.println(date1.toString());
+		date1.setTime(100000);
+		System.out.println(date1.toString());
+		date1.setTime(1000000);
+		System.out.println(date1.toString());
+		date1.setTime(10000000);
+		System.out.println(date1.toString());
+		date1.setTime(100000000);
+		System.out.println(date1.toString());
+		date1.setTime(1000000000);
+		System.out.println(date1.toString());
+		date1.setTime(1000000000);
+		System.out.println(date1.toString());
 
-	class Date {
-		int elapsedTime = 0;
-	}
-
-	public static int elapsedTimeGetter() {
-		int elapsedTime = 0;
-		return elapsedTime;
-	}
-
-	public static void printer() {
-		System.out.println(elapsedTimeGetter());
-	}
-
-	public static void data() {
-
-	}
-
-	public static String inputter(int i) {
-		String input = "10000, 100000, 1000000, 10000000, 100000000, 1000000000, 10000000000, 100000000000";
-		List<String> inputList = new ArrayList<>();
-		String[] values = input.split(", ");
-		inputList.addAll(Arrays.asList(values));
-		String inputString = inputList.get(i);
-		return inputString;
+		// date1.setTime(10000000000);
+		System.out.println(date1.toString());
 	}
 }

@@ -1,3 +1,5 @@
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Scanner;
 
 /**
@@ -47,159 +49,150 @@ class NineSeven {
 	 * This is the account that holds the ID, balance, annual interest rate, and
 	 * date created
 	 */
+
+	public class TestAccount {
+		Account account1 = new Account(1122, 20000.00, 4.5, Calendar.getInstance());
+		// account1.withdraw(2500);
+		// account1.deposit(3000);
+		// account1.monthlyInterest();
+		// account1.dateCreated();
+	}
+
 	public class Account {
 		private int id = 0;
 		private double balance = 0;
 		private double annualInterestRate = 0;
-		private String dateCreated = ""; // current nanoseconds since 1970
-	}
+		private Calendar dateCreated = Calendar.getInstance(); // current nanoseconds since 1970
 
-	/**
-	 * This is the no argument constructor
-	 */
-	public static void noArgConstructor() {
+		Account() {
+		}
 
-	}
+		Account(int newID, double newBalance, double newAnnualInterestRate, Calendar newDateCreated) {
+			id = newID;
+			balance = newBalance;
+			annualInterestRate = newAnnualInterestRate;
+			dateCreated = newDateCreated;
+		}
 
-	/**
-	 * This is the new account constructor that uses a given ID and balance
-	 */
-	public static void newAccountConstructor() {
-		System.out.println("ID: ");
-		int id = (int) getInput();
-		System.out.println("Balance: ");
-		double balance = (double) getInput();
+		/**
+		 * This method grabs the date the account was created
+		 * 
+		 * @return it is returned as nanoseconds since 1970
+		 */
+		public Calendar dateCreatedAccessor() {
+			Calendar dateCreated = this.dateCreated;
+			return dateCreated;
+		}
+
+		/**
+		 * This method accesses the account ID
+		 * 
+		 * @return ID is returned as an int
+		 */
+		public int idAccessor() {
+			int idAccessor = this.id;
+			return idAccessor;
+		}
+
+		/**
+		 * This method accesses the account balance
+		 * 
+		 * @return Balance is returned as a double
+		 */
+		public double balanceAccessor() {
+			double balance = this.balance;
+			return balance;
+		}
+
+		/**
+		 * This method accesses the account annual interest rate
+		 * 
+		 * @return Interest rate is returned as a double
+		 */
+		public double annualInterestRateAccessor() {
+			double annualInterestRate = this.annualInterestRate;
+			return annualInterestRate;
+		}
+
+		/**
+		 * This method sets the ID
+		 */
+		public void setId() {
+			System.out.println("ID: ");
+			this.id = Integer.parseInt(getInput());
+		}
+
+		/**
+		 * This method sets the account balance
+		 */
+		public void setBalance() {
+			System.out.println("ID: ");
+			this.balance = Double.parseDouble(getInput());
+		}
+
+		/**
+		 * This method sets the annual interest
+		 */
+		public void setAnnualInterestRate() {
+			System.out.println("Annual Interest Rate: ");
+			this.annualInterestRate = Double.parseDouble(getInput());
+		}
+
+		/**
+		 * This method gets the monthly interest rate
+		 * 
+		 * @return Monthly interest rate is returned as a double
+		 */
+		public double getMonthlyInterestRate() {
+			return this.annualInterestRate / 12;
+		}
+
+		/**
+		 * This method withdraws from the account
+		 * 
+		 * @return it returns the new balance as a double
+		 */
+		public void withdraw(double ammount) {
+			// this.balance = balance - Double.parseDouble(getInput());
+			this.balance = this.balance - ammount;
+			System.out.println("Balance: $" + this.balance);
+		}
+
+		/**
+		 * This method deposits into the account
+		 * 
+		 * @return The new balance is returned as a double
+		 */
+		public void deposit(double ammount) {
+			this.balance = this.balance + ammount;
+			// this.balance = balance + Double.parseDouble(getInput());
+			System.out.println("Balance: $" + this.balance);
+		}
+
+		/**
+		 * This method gets the monthly interest
+		 * 
+		 * @return Monthly interest is returned as a double
+		 */
+		public void getMonthlyInterest() {
+			System.out.println(this.balance * getMonthlyInterestRate());
+		}
+
+		/**
+		 * This is the UML
+		 */
 
 	}
 
 	/**
 	 * This method gets the input from the user
 	 * 
-	 * @return it returns the input as a double
+	 * @return it returns the input as a String
 	 */
-	public static double getInput() {
+	public static String getInput() {
 		Scanner reader = new Scanner(System.in);
-		double input = reader.nextDouble();
+		String input = reader.nextLine();
 		reader.close();
 		return input;
-	}
-
-	/**
-	 * This method grabs the date the account was created
-	 * 
-	 * @return it is returned as nanoseconds since 1970
-	 */
-	public long dateCreatedAccessor() {
-		long dateCreated = 0;
-		return dateCreated;
-	}
-
-	/**
-	 * This method accesses the account ID
-	 * 
-	 * @return ID is returned as an int
-	 */
-	public int idAccessor() {
-		int idAccessor = 0;
-		return idAccessor;
-	}
-
-	/**
-	 * This method accesses the account balance
-	 * 
-	 * @return Balance is returned as a double
-	 */
-	public double balanceAccessor() {
-		double balance = 0;
-		return balance;
-	}
-
-	/**
-	 * This method accesses the account annual interest rate
-	 * 
-	 * @return Interest rate is returned as a double
-	 */
-	public double annualInterestRateAccessor() {
-		double annualInterestRate = 0;
-		return annualInterestRate;
-	}
-
-	/**
-	 * This method sets the ID
-	 */
-	public static int idMutator() {
-		int idAccessor = 0;
-		return idAccessor;
-	}
-
-	/**
-	 * This method sets the account balance
-	 */
-	public static double balanceMutator() {
-		double balance = 0;
-		return balance;
-	}
-
-	/**
-	 * This method sets the annual interest rate
-	 */
-	public static double annualInterestRateMutator() {
-		double annualInterestRate = 0;
-		return annualInterestRate;
-	}
-
-	/**
-	 * This method gets the monthly interest rate
-	 * 
-	 * @return Monthly interest rate is returned as a double
-	 */
-	public static double getMonthlyInterestRate() {
-		double monthlyInterestRate = 0;
-		return monthlyInterestRate;
-	}
-
-	/**
-	 * This method withdraws from the account
-	 * 
-	 * @return it returns the new balance as a double
-	 */
-	public static double withdraw() {
-		int id = 0;
-		double balance = 0;
-		double withdraw = 0;
-		return balance;
-	}
-
-	/**
-	 * This method deposits into the account
-	 * 
-	 * @return The new balance is returned as a double
-	 */
-	public static double deposit() {
-		int id = 0;
-		double balance = 0;
-		double deposit = 0;
-		return balance;
-	}
-
-	/**
-	 * This method gets the monthly interest
-	 * 
-	 * @return Monthly interest is retunred as a double
-	 */
-	public static double monthlyInterest() {
-		double monthlyInterest = 0;
-		double monthlyInterestRate = getMonthlyInterestRate();
-		double balance = 0;
-		double annualInterestRate = 0;
-		monthlyInterest = balance * monthlyInterestRate;
-		return monthlyInterest;
-	}
-
-	/**
-	 * This method draws the UML
-	 */
-	public static void uml() {
-
 	}
 }

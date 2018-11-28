@@ -18,12 +18,14 @@ class NineNineTest {
 
 	@Test
 	void test() {
+
 		fail("Not yet implemented");
 	}
 
+	public class TestRectangle {
+		public static void main(String[] args) {
+			Rectangle rectangle1 = new Rectangle();
+			System.out.println("Area: " + rectangle1.getArea());
+		}
+	}
 }
-/*
- * Write a test program that creates two RegularPolygon objects, created using
- * the no-arg constructor, using RegularPolygon(6, 4), and using
- * RegularPolygon(10, 4, 5.6, 7.8).
- */
